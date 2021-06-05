@@ -7,7 +7,8 @@ body {
 }
 
 .arcade-stick {
-  width: 700px;
+  width: 400px;
+  height: 300px;
   background-color: #2f4353;
   background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
   margin: 30px auto;
@@ -19,34 +20,15 @@ body {
   display: flex;
 }
 
-.arcade-stick #stick {
+/* .arcade-stick #stick {
   width: 200px;
   height: 200px;
   background-color: #9199ad;
   border-radius: 6px;
   cursor: pointer;
-}
+} */
 
-.arcade-stick #led-display {
-  margin-bottom: 15px;
-  border: 4px solid #333;
-  background-color: #333;
-  border-radius: 12px;
-  box-shadow: inset 0 0 30px #111;
-  height: 60px;
-  padding: 4px;
-  overflow: hidden;
-  color: #1fb426;
-  width: 180px;
-}
 
-.arcade-stick #led-display p {
-  text-transform: uppercase;
-  line-height: 20px;
-  white-space: nowrap;
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
 
 .arcade-stick .btn-panel {
   position: relative;
@@ -117,14 +99,9 @@ body {
   background-color: #ebbb04;
 }
 
-.red {
-  background-color: #a40911;
-}
 
 .blue {
   background-color: #4f53b7;
 }
 
-.green {
-  background-color: #1fb426;
-}
+
