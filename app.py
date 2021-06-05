@@ -1,6 +1,11 @@
 import logging
 from flask import Flask, url_for, render_template, request
 from flask_socketio import SocketIO
+import socket
+import json as jsonlib
+UDP_IP = "127.0.0.1"
+UDP_PORT = 5005
+
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -35,7 +40,15 @@ def send_commands(json):
     # See the log file
     app.logger.info("Incoming command %s", json)
     # Send command to the game
-    pass
+    toSend = jsonlib.dumps(json)
+    sendCommandUdp(bytes(toSend, "utf-8"))
+
+def sendCommandUdp(command):
+    sock = socket.socket(
+        socket.AF_INET, # Internet
+        socket.SOCK_DGRAM) # UDP
+    sock.sendto(command, (UDP_IP, UDP_PORT))# serialiser en byte
+    app.logger.info("envoye %s", command)
 
 """
 Starting App
